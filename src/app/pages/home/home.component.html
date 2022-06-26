@@ -1,0 +1,112 @@
+<div class="hero-section">
+  <div class="left">
+    <div class="intro">
+      <h1>GreenBanking არის თანამედროვე ბანკინგი</h1>
+      <p>
+        ადამიანების ცხოვრება განსხვავებული ეტაპებისგან შედგება, თითოეული ეს
+        ეტაპი კი უამრავ მოლოდინსა და სურვილს აერთიანებს. ჩვენ ვპოულობთ
+        ადამიანებთან შეხების წერტილებს, ვითვალისწინებთ სხვადასხვა სეგმენტების
+        განვითარების ეტაპებს და ვქმნით ინსტრუმენტებსა და შესაძლებლობებს,
+        რომლებიც ემსახურება სურვილებისა და საჭიროებების სრულყოფას.
+      </p>
+      <button type="button" routerLink="/about">მეტის ნახვა</button>
+    </div>
+    <div class="chatbot-info">
+      <img src="../../../assets/Chatbot.png" alt="chatbot" />
+      <p>
+        GreenBank-ს გააჩნია ეფექტური ჩათბოთი, რომელიც უზრუნველყოფს სწრაფ და რაც
+        უფრო შეიძლება კომფორტულ გამოს შექმნაზე მომხმარებლებისთვის
+      </p>
+    </div>
+  </div>
+  <div class="right">
+    <img src="../../../assets/Bank_01 1.png" alt="bank buildings" />
+  </div>
+</div>
+<div class="home-container">
+  <div class="possibilities">
+    <div class="find">
+      <h2>იპოვე რაც გინდა</h2>
+      <div class="img-item baking">
+        <div class="inner-text">
+          <h5>სესხი დამწყები ბიზნესებისთვის</h5>
+          <p>
+            თუ გსურთ აქციოთ ბიზნესიდეა რეალობად ან არსებული საქმიანობის
+            პარალელურად დანერგოთ ახალი, განსხვავებული მიმართულება, გთავაზობთ
+            სესხს დამწყები ბიზნესებისთვის.
+          </p>
+        </div>
+      </div>
+      <div class="img-item cozy">
+        <div class="inner-text">
+          <h5>ბიზნესკურსი</h5>
+          <p>
+            ახალი შემეცნებით-საგანმანათლებლო პლატფორმა, რომელიც ბიზნესით
+            დაინტერესებულ ნებისმიერ ადამიანს უფასოდ სთავაზობს მრავალფეროვან
+            ტრენინგებს, ცოდნასა და გამოცდილებას.
+          </p>
+        </div>
+      </div>
+      <div class="img-item nature">
+        <div class="inner-text">
+          <h5>500 Georgia</h5>
+          <p>
+            500 Startups-ი აქტიური ვენჩურული კაპიტალის კომპანიაა, რომლის
+            მისიაცაა ყველაზე ნიჭიერი ანტრეპრენერების აღმოჩენა, წარმატებული
+            ბიზნესის შექმნის პროცესში დახმარება, გლობალური ეკოსისტემის
+            განვითარება და სხვა.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="offer">
+      <h2>რას გთავაზობ</h2>
+      <div class="services">
+        <trigger-list
+          [isVertical]="true"
+          [triggers]="homeTriggers"
+        ></trigger-list>
+      </div>
+    </div>
+  </div>
+  <div class="service cards">
+    <div class="info">
+      <h2>
+        Limited Time Offer! Praesent Sapien Massa Convallis a Pellentesque Nec.
+      </h2>
+      <p>
+        სამოგზაუროდ, განათლებისთვის, სასურველი ნივთების შესაძენად ან სხვა
+        ნებისმიერი დასახული მიზნის მარტივად მისაღწევად, ჩვენ გირჩევთ შეგროვებადი
+        ანაბარი გახსნა. მასზე ნებისმიერ დროს შეძლებ თანხის დამატებას და რაც
+        მთავარია, შეამცირებ დანაზოგის ვადაზე ადრე გამოყენების ცდუნებას.
+      </p>
+      <button type="button">მეტის ნახვა</button>
+    </div>
+    <img src="../../../assets/cards.png" alt="cards" />
+  </div>
+  <div class="service app">
+    <div class="info">
+      <h2>
+        Limited Time Offer! Praesent Sapien Massa Convallis a Pellentesque Nec.
+      </h2>
+      <p>
+        დაამატე სხვა ბანკების ანგარიშები მობილბანკში და აკონტროლე შენი ფინანსები
+        ერთ სივრცეში შეამოწმე ნაშთი სხვა ბანკის ანგარიშებზე თვალი ადევნე შენ
+        მიერ შესრულებულ ოპერაციებს გამოაჩინე ან დაფარე სხვა ბანკების ინფორმაცია
+        მომენტალურად
+      </p>
+      <button type="button">მეტის ნახვა</button>
+    </div>
+    <img src="../../../assets/app.png" alt="app" />
+  </div>
+  <div class="reviews">
+    <h2>ჩვენი მომხმარებლების review</h2>
+    <div class="review-list">
+      <trigger-list
+        [isVertical]="false"
+        [triggers]="reviews"
+        [isReview]="true"
+      ></trigger-list>
+    </div>
+  </div>
+</div>

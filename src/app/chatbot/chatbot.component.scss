@@ -1,0 +1,178 @@
+@import "../../styles.scss";
+.chatbot {
+  position: fixed;
+  bottom: 0;
+  right: 30px;
+  width: 440px;
+  height: 560px;
+  background-color: $primary-light;
+  transform: translateY(90%);
+  transition: transform 0.2s ease-in;
+
+  .menu {
+    position: absolute;
+    background-color: $primary-dark;
+    color: #fff;
+    top: -70px;
+    right: 18px;
+    z-index: 10;
+    overflow: hidden;
+    border: 1px solid #fff;
+
+    ul {
+      list-style: none;
+      li {
+        padding: 10px;
+        font-size: 18px;
+        border: 1px solid #fff;
+        border-collapse: collapse;
+        &:hover {
+          cursor: pointer;
+          background-color: lighten($color: $primary-dark, $amount: 10%);
+        }
+      }
+    }
+  }
+
+  &-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 5px 20px;
+    background-color: $primary-dark;
+    border-radius: inherit;
+    height: 60px;
+    h3 {
+      color: #fff;
+    }
+
+    svg {
+      fill: #fff;
+      height: 20px;
+      width: 20px;
+      cursor: pointer;
+      transition: transform 0.2s ease-in;
+    }
+  }
+
+  &-body {
+    border: 1px solid $primary-dark;
+    background-color: $primary-light;
+    height: 100%;
+    transition: max-height 0.2s ease-in;
+
+    .timestamp {
+      color: $timestamp-gray;
+      font-size: 16px;
+      padding: 6px;
+      background: #f1f1f1;
+      width: fit-content;
+      margin: 0 auto;
+      border-radius: 20px;
+    }
+
+    .list-messages {
+      display: flex;
+      flex-direction: column;
+      height: 75%;
+      overflow: auto;
+      padding-top: 10px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .message {
+        max-width: 70%;
+        margin-top: 20px;
+        animation: floatUp 1s forwards;
+      }
+    }
+
+    .actions {
+      padding: 10px;
+      position: fixed;
+      display: block;
+      bottom: 6px;
+      width: 100%;
+
+      input {
+        background-color: $gray-secondary;
+        padding: 10px;
+        font-size: 18px;
+        border: none;
+        width: 85%;
+        margin-right: 10px;
+        color: $timestamp-gray;
+        height: 40px;
+      }
+
+      button {
+        cursor: pointer;
+        // background-color: $blue-primary;
+        border: none;
+        // border-radius: 100%;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        bottom: 10px;
+        background-color: $primary-dark;
+
+        img {
+          display: block;
+          margin-left: -15px;
+          margin-top: -10px;
+        }
+      }
+    }
+  }
+}
+
+.left-message {
+  display: flex;
+  margin-left: 60px;
+}
+
+.right-message {
+  display: flex;
+  float: right;
+  width: fit-content;
+  margin-right: 30px;
+}
+
+.hide {
+  transform: translateY(90%);
+}
+
+.show {
+  transform: translateY(0);
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 0.3s ease-in;
+
+  &:hover {
+    background: lighten($color: $primary-dark, $amount: 5%);
+  }
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.light {
+  background-color: $highlight-primary;
+}
