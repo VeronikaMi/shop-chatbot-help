@@ -9,6 +9,7 @@ import { Message } from '../chatbot.component';
 export class MessageComponent {
   @Input() message: Message;
   @Input('date') timestamp: string;
+  @Input() selectedImage:any;
 
   @Output() selectedOption: EventEmitter<number> = new EventEmitter<number>();
 

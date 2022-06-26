@@ -23,6 +23,7 @@ export class ChatbotComponent implements OnInit, AfterViewChecked, OnDestroy {
   @Input('messages') messages: Message[] = [];
   @Input() productsList: any[] = [];
   @Output() productsListChange: EventEmitter<any[]> = new EventEmitter();
+  public userImg:any;
   public changeColor: boolean = false;
   private subscription: Subscription;
   private initialMessage: Message = {
@@ -32,6 +33,7 @@ export class ChatbotComponent implements OnInit, AfterViewChecked, OnDestroy {
     selectOptions: [],
   };
 
+  public selectedFile: ImageSnippet;
   public textInput: string = '';
   public showChatbot: boolean = false;
   public showMenu: boolean = false;
@@ -90,6 +92,9 @@ export class ChatbotComponent implements OnInit, AfterViewChecked, OnDestroy {
       localStorage.setItem('history', JSON.stringify(this.messages));
       setTimeout(() => this.getResponse(newMessage.text), 1000);
       this.textInput = '';
+    }
+    else if(this.userImg){
+      console.log(this.userImg)
     }
   }
 
@@ -157,6 +162,28 @@ export class ChatbotComponent implements OnInit, AfterViewChecked, OnDestroy {
       localStorage.setItem('history', JSON.stringify(this.messages));
     });
     
+  }
+
+  processFile(imageInput: any) {
+    const file: File = imageInput.files[0];
+    const reader = new FileReader();
+
+    console.log(file);
+    reader.addEventListener('load', (event: any) => {
+
+      this.selectedFile = new ImageSnippet(event.target.result, file);
+      console.log(this.selectedFile);
+
+      this.chatService.uploadImage(this.selectedFile.file).subscribe(
+        (res) => {
+        console.log("uploaded successfully")
+        },
+        (err) => {
+        console.log("failde to upload")
+        })
+    });
+
+    reader.readAsDataURL(file);
   }
 
   // fix the container (scroll) - done
@@ -245,4 +272,8 @@ export class Message {
   date: string;
   userOwner: boolean;
   selectOptions?: { id: number; text: string }[];
+}
+
+class ImageSnippet {
+  constructor(public src: string, public file: File) {}
 }

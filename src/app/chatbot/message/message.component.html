@@ -2,6 +2,7 @@
   <p>
     {{ message.text }}
   </p>
+  <img *ngIf="selectedImage" [src]="selectedImage" alt="">
   <p class="timestamp">{{ message.date }}</p>
 </div>
 <div *ngIf="!message.userOwner">

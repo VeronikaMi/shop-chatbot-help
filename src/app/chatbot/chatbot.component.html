@@ -37,13 +37,21 @@
             'left-message': !message.userOwner,
             'right-message': message.userOwner
           }"
+          [selectedImage] = "selectedImage"
           (selectedOption)="onOptionSelect($event)"
         ></message>
       </div>
     </div>
     <div class="actions">
       <div class="input-message">
-        <input
+        <label for="file-upload" class="custom-file-upload">
+          <img src="../../assets/attach-file.png" alt="airplane" />
+        </label>
+        <input id="file-upload" #imageInput
+        type="file"
+        accept="image/*"
+        (change)="processFile(imageInput)"/>
+          <input
           class="input-text-message"
           type="text"
           [(ngModel)]="textInput"
