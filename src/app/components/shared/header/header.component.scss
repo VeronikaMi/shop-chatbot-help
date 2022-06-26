@@ -1,15 +1,21 @@
 @import "../../../../styles.scss";
 
 header {
-  padding: 25px;
-  text-align: center;
+  padding: 20px;
   color: $primary-dark;
-
+  text-align: center;
+  margin-bottom:50px;
+  background-color: $primary-light;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   #logo {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 28px;
     .highlight {
       color: $highlight-primary;
     }
   }
+  p{
+    font-size: 14px;
+    color: $primary-text;
+  };
 }

@@ -5,7 +5,7 @@
   right: 30px;
   width: 440px;
   height: 560px;
-  background-color: $primary-light;
+  background-color: #fff;
   transform: translateY(90%);
   transition: transform 0.2s ease-in;
 
@@ -59,7 +59,7 @@
 
   &-body {
     border: 1px solid $primary-dark;
-    background-color: $primary-light;
+    background-color: #fff;
     height: 100%;
     transition: max-height 0.2s ease-in;
 
@@ -111,9 +111,7 @@
 
       button {
         cursor: pointer;
-        // background-color: $blue-primary;
         border: none;
-        // border-radius: 100%;
         width: 40px;
         height: 40px;
         position: absolute;
@@ -173,6 +171,6 @@
   }
 }
 
-.light {
-  background-color: $highlight-primary;
-}
+// .light {
+//   background-color: $highlight-primary;
+// }

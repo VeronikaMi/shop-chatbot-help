@@ -1,7 +1,20 @@
-<!-- <div [class]="isVertical ? 'trigger vertical' : 'trigger horizontal'">
-  <img [src]="trigger.imgUrl" alt="trigger" />
+<div class="trigger">
+  <img src="assets/pants.jpg" alt="product" />
+  <!-- <img [src]="'assets/' + product.productPhoto.path" alt="product" /> -->
   <div class="text">
-    <h4 [ngClass]="{ highlight: isReview }">{{ trigger.heading }}</h4>
-    <p>{{ trigger.text }}</p>
+    <div class="upper-line">
+      <div class="left">
+        <h4>{{ product.name }}</h4>
+        <p>{{ product.description }}</p>
+      </div>
+      <div class="right">
+        <p>{{ product.price }}</p>
+      </div>
+    </div>
+    <div class="lower-line">
+      <p><span class="title">მატერიალი:</span> {{ product.materialType.name }}</p>
+      <p><span class="title">ფერი:</span> {{ product.colorType.name }}</p>
+      <p><span class="title">ზომა EU/US:</span>  {{ product.sizeEuType.value }}/{{ product.sizeUsType.value }}</p>
+    </div>
   </div>
-</div> -->
+</div>

@@ -123,25 +123,46 @@ export class ChatbotComponent implements OnInit, AfterViewChecked, OnDestroy {
   }
 
   private getResponse(text: string): void {
-    let products;
+  //   this.productsList = [
+  //     {
+  //    clothType: { name: "Pants", description: null, id: 1 },
+  //    clothTypeId: 1,
+  //    colorType: { name: "Black", description: null, id: 9 },
+  //    colorTypeId: 9,
+  //    description: "ყველაზე მაგარი ბრენდული შარვალი",
+  //    id: 1,
+  //    materialType: { name: "Cotton", description: null, id: 2 },
+  //    materialTypeId: 2,
+  //    name: "მასიმო დუტის შარვალი",
+  //    price: 399.99,
+  //    productPhoto: { path: "C:\\Users\\ramazi\\Desktop\\photos\\pants.jpg", data: null, id: 3 },
+  //    productPhotoId: 3,
+  //    sizeEuType: { value: 39, description: null, id: 39 },
+  //    sizeEuTypeId: 39,
+  //    sizeUsType: { value: "M", description: null, id: 38 },
+  //    sizeUsTypeId: 38,
+  //    userCart: null,
+  //    userCartId: null,
+  //  },
+  //  ];
+  //  this.productsListChange.emit(this.productsList);
+
     this.chatService.getResponse(text).subscribe((response: any) => {
-      // console.log(response)
       this.messages.push({
         text: response.responseMessage,
         date: this.getTime(),
         userOwner: false,
       });
-      console.log(response.products);
-      products = response.products;
       this.productsListChange.emit(response.products);
-      console.log(products[0].name);
       localStorage.setItem('history', JSON.stringify(this.messages));
     });
+    
   }
 
   // fix the container (scroll) - done
-  // add list view
-  // card design
+  // add list view - done
+  // card design - done
+  // change chatbot color
   // add attachment -  photo - send in formdata(binary)
 
 //   Array [ {…} ]

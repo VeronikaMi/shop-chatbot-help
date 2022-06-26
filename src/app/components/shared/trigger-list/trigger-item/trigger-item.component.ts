@@ -6,17 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['trigger-item.component.scss'],
 })
 export class TriggerItemComponent {
-  @Input() isVertical: boolean;
-  @Input() trigger: Trigger;
-  @Input() isReview: boolean;
-
-  constructor() {
-    console.log(this.isVertical);
-  }
-}
-
-export class Trigger {
-  imgUrl: string;
-  heading: string;
-  text: string;
+  @Input() product: any;
 }

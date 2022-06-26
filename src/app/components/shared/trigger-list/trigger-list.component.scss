@@ -1,12 +1,11 @@
-.horizontal {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  gap: 40px;
-}
+@import '../../../../styles.scss';
+.list{
+  width: 90%;
+  margin: 0 auto;
 
-@media (max-width: 850px) {
-  .horizontal {
-    flex-direction: column;
+  p{
+    color: $primary-dark;
+    font-size: 30px;
+    font-weight: bold;
   }
 }

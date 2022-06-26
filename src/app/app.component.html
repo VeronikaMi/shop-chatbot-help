@@ -1,1 +1,3 @@
-<chat [productsList]="products"></chat>
+<app-header></app-header>
+<trigger-list [productsList]="products"></trigger-list>
+<chat [productsList]="products" (productsListChange)="products=$event"></chat>

@@ -1,8 +1,7 @@
-<div [class]="isVertical ? '' : 'horizontal'">
+<div class="list">
+  <p *ngIf="productsList.length === 0">პროდუქცია არ მოიძებნა</p>
   <trigger
-    *ngFor="let item of triggers"
-    [isVertical]="isVertical"
-    [trigger]="item"
-    [isReview]="isReview"
+    *ngFor="let item of productsList"
+    [product]="item"
   ></trigger>
 </div>

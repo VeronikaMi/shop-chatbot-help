@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { MessageComponent } from './chatbot/message/message.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
 import { ChatbotService } from './chatbot.service';
+import { TriggerListComponent } from './components/shared/trigger-list/trigger-list.component';
+import { TriggerItemComponent } from './components/shared/trigger-list/trigger-item/trigger-item.component';
+import { HeaderComponent } from './components/shared/header/header.component';
 
 
 @NgModule({
@@ -15,6 +18,9 @@ import { ChatbotService } from './chatbot.service';
     AppComponent,
     MessageComponent,
     ChatbotComponent,
+    TriggerListComponent,
+    TriggerItemComponent,
+    HeaderComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [ChatbotService],
