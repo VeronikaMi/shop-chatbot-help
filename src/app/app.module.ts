@@ -12,7 +12,6 @@ import { TriggerListComponent } from './components/shared/trigger-list/trigger-l
 import { TriggerItemComponent } from './components/shared/trigger-list/trigger-item/trigger-item.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

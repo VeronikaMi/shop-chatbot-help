@@ -8,14 +8,6 @@ const API: string = 'https://localhost:44354';
 export class ChatbotService {
   constructor(private http: HttpClient) {}
 
-  // public getInitMessage(): Observable<any> {
-  //   return this.http.get(`${API}/introMessage`);
-  // }
-
-  // public getSelections(): Observable<any> {
-  //   return this.http.get(`${API}/selectedQuestions`);
-  // }
-
   public getResponse(str: any): Observable<any> {
     let params = new HttpParams();
     params = params.append('text', str);
@@ -26,6 +18,7 @@ export class ChatbotService {
   public uploadImage(image: File): Observable<any> {
     const formData = new FormData();
     formData.append('image', image);
+    // api to be changed
     return this.http.post('/api/v1/image-upload', formData);
   }
 }

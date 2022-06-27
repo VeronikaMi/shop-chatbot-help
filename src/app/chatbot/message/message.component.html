@@ -2,7 +2,7 @@
   <p>
     {{ message.text }}
   </p>
-  <img *ngIf="selectedImage" [src]="selectedImage" alt="">
+  <img class="image-search" *ngIf="message.img" [src]="message.img" alt="">
   <p class="timestamp">{{ message.date }}</p>
 </div>
 <div *ngIf="!message.userOwner">
@@ -12,13 +12,5 @@
       {{ message.text }}
     </p>
     <p class="timestamp">{{ message.date }}</p>
-  </div>
-  <div class="selections" *ngIf="message.selectOptions">
-    <p
-      *ngFor="let option of message.selectOptions"
-      (click)="onSelectOption(option.id)"
-    >
-      {{ option.text }}
-    </p>
   </div>
 </div>

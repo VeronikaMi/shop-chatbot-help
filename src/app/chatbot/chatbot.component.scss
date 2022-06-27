@@ -35,25 +35,18 @@
   }
 
   &-header {
-    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     cursor: pointer;
     padding: 5px 20px;
     background-color: $primary-dark;
     border-radius: inherit;
     height: 60px;
+    
     h3 {
+      width: 100%;
+      text-align: center;
       color: #fff;
-    }
-
-    svg {
-      fill: #fff;
-      height: 20px;
-      width: 20px;
-      cursor: pointer;
-      transition: transform 0.2s ease-in;
     }
   }
 
@@ -146,20 +139,6 @@
 
 .show {
   transform: translateY(0);
-}
-
-.circle {
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  transition: all 0.3s ease-in;
-
-  &:hover {
-    background: lighten($color: $primary-dark, $amount: 5%);
-  }
 }
 
 @keyframes floatUp {
