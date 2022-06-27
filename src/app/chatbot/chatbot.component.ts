@@ -22,7 +22,7 @@ export class ChatbotComponent implements OnInit, AfterViewChecked, OnDestroy {
   @Input('messages') messages: Message[] = [];
   @Input() productsList: any[] = [];
   @Output() productsListChange: EventEmitter<any[]> = new EventEmitter();
-  
+
   private subscription: Subscription;
   private initialMessage: Message = {
     text: 'გამარჯობა, რით შემიძლია დაგეხმაროთ?',
@@ -62,9 +62,9 @@ export class ChatbotComponent implements OnInit, AfterViewChecked, OnDestroy {
       let newMessage = { text: this.textInput, date: '', userOwner: true };
       newMessage.date = this.getTime();
       this.messages.push(newMessage);
+      this.textInput = '';
       localStorage.setItem('history', JSON.stringify(this.messages));
       setTimeout(() => this.getResponse(newMessage.text), 1000);
-      this.textInput = '';
     }
   }
 
