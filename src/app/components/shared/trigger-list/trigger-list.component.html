@@ -1,7 +1,4 @@
 <div class="list">
-  <p *ngIf="productsList.length === 0">პროდუქცია არ მოიძებნა</p>
-  <trigger
-    *ngFor="let item of productsList"
-    [product]="item"
-  ></trigger>
+    <p *ngIf="!productsList">პროდუქცია არ მოიძებნა</p>
+    <trigger *ngFor="let item of productsList" [product]="item"></trigger>
 </div>

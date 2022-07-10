@@ -19,6 +19,6 @@ export class ChatbotService {
     const formData = new FormData();
     formData.append('image', image);
     // api to be changed
-    return this.http.post('/api/v1/image-upload', formData);
+    return this.http.post(API + '/v1/bot/image-upload', formData);
   }
 }

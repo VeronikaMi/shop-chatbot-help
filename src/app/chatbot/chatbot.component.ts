@@ -136,12 +136,23 @@ export class ChatbotComponent implements OnInit, AfterViewChecked, OnDestroy {
       localStorage.setItem('history', JSON.stringify(this.messages));
 
       this.chatService.uploadImage(this.selectedFile.file).subscribe(
-        (res) => {
+        (response) => {
         console.log("uploaded successfully")
+        this.messages.push({
+          text: response.responseMessage,
+          date: this.getTime(),
+          userOwner: false,
+        });
+        this.productsListChange.emit(response.products);
         //change product list
         },
         (err) => {
         console.log("failed to upload")
+        this.messages.push({
+          text: "თქვენი ფოტო ვერ გაიგზავნა",
+          date: this.getTime(),
+          userOwner: false,
+        });
         })
     });
 
